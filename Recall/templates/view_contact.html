@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>{{ contact[1] }} - Details</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+<div class="container py-4">
+
+  <h1>{{ contact[1] }}</h1>
+
+  {% if contact[5] %}
+    <img src="{{ url_for('uploaded_file', filename=contact[5]) }}" alt="Face ID" class="img-thumbnail mb-3" width="200">
+  {% endif %}
+
+  <ul class="list-group">
+    <li class="list-group-item"><b>Association:</b> {{ contact[2] }}</li>
+    <li class="list-group-item"><b>Phone:</b> {{ contact[3] }}</li>
+    <li class="list-group-item"><b>Social Media:</b> {{ contact[4] }}</li>
+    <li class="list-group-item"><b>Likes:</b> {{ contact[6] }}</li>
+    <li class="list-group-item"><b>Dislikes:</b> {{ contact[7] }}</li>
+    <li class="list-group-item"><b>Relationship Status:</b> {{ contact[8] }}</li>
+    <li class="list-group-item"><b>City:</b> {{ contact[9] }}</li>
+    <li class="list-group-item"><b>Birthday:</b> {{ contact[10] }}</li>
+    <li class="list-group-item"><b>Education:</b> {{ contact[11] }}</li>
+    <li class="list-group-item"><b>Close Friend:</b> {{ 'Yes' if contact[12] else 'No' }}</li>
+    <li class="list-group-item"><b>Notes:</b> {{ contact[13] }}</li>
+  </ul>
+
+  <a href="{{ url_for('index') }}" class="btn btn-secondary mt-3">⬅ Back to list</a>
+
+</div>
+</body>
+</html>
